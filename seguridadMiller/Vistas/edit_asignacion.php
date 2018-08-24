@@ -69,19 +69,14 @@ $conn->close();
           <form action="../controlador/update_asignacion.php" method="post">
             <div class="form-group">
 
-
   <label for="sel1">Usuario:</label>
   <select class="form-control" name="id_usuario">
   <?php 
-
    foreach ($usuarios AS $u)
 {   ?>
  <option value="<?php echo $u['id_usuario'];?>" <?php if ($u["id_usuario"]==$aUsuario->getId_usuario()){ echo "selected";} ?>><?php echo "$u[email]"; ?></option>
 <?php } ?>
   </select>
-
-
-
 
   <label for="sel1">Recurso : </label>
   <select class="form-control" name="id_recurso">
@@ -89,14 +84,10 @@ $conn->close();
 
    foreach ($recursos AS $r)
 {   ?>
- <option value="<?php echo $u['id_recurso'];?>" <?php if ($r["id_recurso"]==$rRecurso->getId_Recurso()){ echo "selected";} ?>><?php echo "$r[nombre]"; ?></option>
+ <option value="<?php echo $r['id_recurso'];?>" <?php if ($r["id_recurso"]==$rRecurso->getId_Recurso()){ echo "selected";} ?>><?php echo "$r[nombre]"; ?></option>
 <?php } ?>
   </select>
-
 </div>
-
-
-
 <div class="form-group">
               <label>didentificador de la asignacion ID </label>
               <input class="form-control" type="text" name="id_asignacion" value="<?php echo $id_asignacion; ?>"  required ><br>

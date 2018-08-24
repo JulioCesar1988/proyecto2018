@@ -32,7 +32,7 @@ public function getId_rol(){
 
  // Asignaciones de usuarios con sus respectivos recursos.   
   public function listAll() {
-    $query = Asociacion::connection()->prepare("SELECT *,usuario.email AS id_usuario , recurso.nombre as id_recurso ,rol.nombre as id_rol  from Asignacion inner join usuario on (asignacion.id_usuario = usuario.id_usuario)
+    $query = Asociacion::connection()->prepare("SELECT *,usuario.email AS id_usuario , recurso.nombre as id_recurso , rol.nombre as id_rol  from Asignacion inner join usuario on (asignacion.id_usuario = usuario.id_usuario)
       inner join recurso on (asignacion.id_recurso  = recurso.id_recurso)
       inner join rol on (asignacion.id_rol = rol.id_rol )");
     $query->execute();
@@ -78,8 +78,8 @@ public function getId_rol(){
 
 // actualizar Asignacion de recursos para usuarios
   public function update($id_usuario,$id_recurso,$id_asignacion) {
-    $query = Asignacion::connection()->prepare("UPDATE asignacion SET id_usuario = ?, id_recurso = ?  where (id_asignacion = ?) ");
-    $query->execute(array($id_usuario , $id_recurso,$id_recurso));
+    $query = Asociacion::connection()->prepare("UPDATE asignacion SET id_usuario = ?, id_recurso = ?  where (id_asignacion = ?) ");
+    $query->execute(array($id_usuario , $id_recurso,$id_asignacion));
   }
 
 }

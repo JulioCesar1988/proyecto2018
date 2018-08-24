@@ -1,3 +1,11 @@
+
+
+
+
+<!--<a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a> -->
+
+
+
 <?php
     if(!isset($_SESSION)) 
     { 
@@ -7,7 +15,9 @@
   <nav class="navbar navbar-default" >
   <div class="container-fluid">
     <div class="navbar-header"> 
-      <a class="navbar-brand" href="/seguridadMiller" >Miller Sistema</a>
+      <a class="navbar-brand"  href="/seguridadMiller"  >  <span class="logo-lg"><b>MILLER </b>SISTEMAS </span></a>
+      
+
     </div>
     <ul class="nav navbar-nav navbar-right">
  <?php    if (isset($_SESSION['email'])) { ?>    

@@ -9,8 +9,6 @@ class Usuario  extends SeguridadBase {
  protected $id_rol;
  protected $id_usuario;
 
-
-
 // funcion load para cargar los usuarios en combobox
  static public function load($id){
     $query = Usuario::connection()->prepare("SELECT * FROM usuario WHERE (id_usuario = ?)");
@@ -72,9 +70,9 @@ public function getId_usuario(){
     return nt();
   }
 
-// Eliminacion de usuario dado email 
+// Eliminacion de usuario dado email  -> SI TIENE ALGUNA ASIGNACION NO TENDRIA QUE PDOER ELIMINAR LOS ELEMENTOS DE LA BD  
   public function delete($email) {
-      $query = Usuario::connection()->prepare("SELECT id from usuario WHERE (email = ?)");
+      $query = Usuario::connection()->prepare("SELECT id from usuario WHERE ((usuario.email = ?)AND(Usuario.id_usuario NOT IN (SELECT id_usuario FROM ASIGNACION ) ))");
       $query->execute(array($email));
 
   }

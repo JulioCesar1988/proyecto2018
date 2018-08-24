@@ -57,6 +57,7 @@ $recursos = Recurso::listRecursosUsuario(); }
         <th>Nombre</th>
         <th>PATH</th>
         <th>Acceso</th>
+    
       </tr>
     </thead>
     <tbody>
