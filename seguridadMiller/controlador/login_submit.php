@@ -24,7 +24,7 @@
             $_SESSION['id_usuario'] = $row['id_usuario'];
       
 
-            header('location:/seguridadMiller/vistas/show_recursos.php');
+            header('location:../seguridadMiller/vistas/show_recursos.php');
 
 
           }
