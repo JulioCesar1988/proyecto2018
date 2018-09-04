@@ -31,6 +31,9 @@
   <![endif]-->
 </head>
 <?php include '../include/navbar.php';?>
+
+
+
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">

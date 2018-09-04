@@ -24,9 +24,8 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
+   <?php include '../include/navbar.php';?>
 <body class="hold-transition login-page">
-
-
 <div class="login-box">
   <div class="login-logo">
     <a href="../../index2.html"><b>Miller Sistemas </b> Aplicaciones</a>

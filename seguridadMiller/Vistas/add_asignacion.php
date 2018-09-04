@@ -31,8 +31,9 @@
   <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
    
  </head>
+  <?php include '../include/navbar.php';?>
   <body class="hold-transition register-page">
-     <?php include '../include/navbar.php';?>
+    
     <div class="row">
       <div class="col-md-offset-4 col-md-4" style="text-align: center;">
         <h4>Asociar Usuario con Recursos</h2>

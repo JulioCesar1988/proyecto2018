@@ -16,9 +16,24 @@
   <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
+ <?php include '../include/navbar.php';?>
 <body class="hold-transition register-page">
-   <?php include '../include/navbar.php';?>
+
+
+  <script>
+var app = angular.module("myShoppingList", []); 
+app.controller("myCtrl", function($scope) {
+    $scope.products = [];
+    $scope.addItem = function () {
+        $scope.products.push($scope.addMe);
+    }    
+});
+</script>
+
+
+  
 <div class="register-box">
   <div class="register-logo">
     <a href=".."><b>Agregar Recurso</b></a>
@@ -34,6 +49,18 @@
         <input type="text" class="form-control" name="ip"placeholder="Ejemplo 159.96.45.42/gestorbox">
         <span class="glyphicon fa fa-fw fa-bolt form-control-feedback"></span>
       </div>
+
+
+      <div ng-app="myShoppingList" ng-controller="myCtrl">
+  <ul>
+    <li ng-repeat="x in products">{{x}}</li>
+  </ul>
+  <input ng-model="addMe">
+  <button ng-click="addItem()">Agregar</button>
+</div>
+
+<p>Agregar perfiles existentes en el recurso </p>
+
       <div class="row">
         <!-- /.col -->
         <div class="col-xs-4">
@@ -45,6 +72,9 @@
   </div>
   <!-- /.form-box -->
 </div>
+
+
+
 <!-- /.register-box -->
 <!-- jQuery 2.2.3 -->
 <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>

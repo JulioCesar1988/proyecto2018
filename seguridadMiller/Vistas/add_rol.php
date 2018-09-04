@@ -25,8 +25,9 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
+   <?php include '../include/navbar.php';?>
 <body class="hold-transition register-page">
-    <?php include '../include/navbar.php';?>
+ 
 <div class="register-box">
   <div class="register-logo">
     <a href="../../index2.html"><b>Agregar Rol </b>LTE</a>

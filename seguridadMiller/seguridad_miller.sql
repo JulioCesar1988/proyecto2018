@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-08-2018 a las 16:36:10
--- Versión del servidor: 10.1.26-MariaDB
--- Versión de PHP: 7.1.9
+-- Tiempo de generación: 04-09-2018 a las 16:36:52
+-- Versión del servidor: 10.1.30-MariaDB
+-- Versión de PHP: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -54,11 +54,14 @@ INSERT INTO `asignacion` (`id_asignacion`, `id_usuario`, `id_recurso`, `id_rol`)
 (80, 18, 23, 9),
 (81, 23, 17, 3),
 (82, 24, 17, 3),
-(83, 25, 17, 3),
 (84, 24, 17, 3),
 (85, 25, 23, 4),
 (86, 26, 24, 10),
-(87, 25, 26, 3);
+(87, 25, 26, 3),
+(88, 25, 24, 4),
+(89, 25, 27, 3),
+(90, 26, 24, 3),
+(91, 25, 25, 13);
 
 -- --------------------------------------------------------
 
@@ -78,11 +81,14 @@ CREATE TABLE `recurso` (
 
 INSERT INTO `recurso` (`id_recurso`, `nombre`, `ip`) VALUES
 (17, 'Odoo Oficina de Ventas', '   http://159.96.45.42:8069/web/login?db=Ventas'),
-(23, ' GestorBox2018', '  159.96.45.43/gestorbox2018/'),
-(24, 'PLANTA', '159.96.45.34'),
-(25, 'fantasma ', 'way/no/mames/juju'),
-(26, 'haciendo un cambio de recurso', 'es verdad '),
-(27, 'agregando recursos', '123.13.23.23');
+(24, 'OutLook', 'https://outlook.office365.com/'),
+(25, 'Bacula ', 'http://159.96.45.47/webacula/auth/login'),
+(26, 'Vp Tools', 'http://159.96.45.43/PHP_PCL/'),
+(27, 'Odo Sistemas', 'http://159.96.45.42:8069/web/login?db=sistemas'),
+(29, 'gestorbox', 'http://localhost/gestorbox2018/index.php'),
+(30, 'fff', 'http://localhost/gestorbox2018/index.php'),
+(31, 'joe contreras', '159.96.45.43'),
+(32, 'joe contreras', 'http://localhost/gestorbox2018/index.php');
 
 -- --------------------------------------------------------
 
@@ -108,7 +114,8 @@ INSERT INTO `rol` (`id_rol`, `nombre`) VALUES
 (13, 'Control de Produccion'),
 (15, 'Sistemas'),
 (16, 'Planta'),
-(17, 'Oficina Tecnica');
+(17, 'Oficina Tecnica'),
+(18, 'asdasdasd');
 
 -- --------------------------------------------------------
 
@@ -138,7 +145,10 @@ INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `email`, `clave`, `ro
 (18, '          Julio', '          Contreras', 'jcontreras@millerbi.net', '1234', '', 3),
 (25, 'Leonardo', 'Miaton', 'lmiaton@millerbi.net', '1234', '', 4),
 (26, 'Ezequiel ', 'Guadarrama', 'eguadarrama@millerbi.net', '1234', '', 4),
-(27, 'Julio', 'Contreras', 'j@gmail.com', '1234', '', 4);
+(27, 'Julio', 'Contreras', 'j@gmail.com', '1234', '', 4),
+(28, 'asdasd', 'asdasd', 'julio.unlp2010@gmail.com', 'asdasdasd', '', 4),
+(29, 'asasdasdasd', 'adaasdasdasd', 'julio.unlp2010@gmail.com', '1234', '', 9),
+(30, 'asdasd', 'asdasd', 'aa@gmail.com', '1234', '', 4);
 
 -- --------------------------------------------------------
 
@@ -195,25 +205,25 @@ ALTER TABLE `usuario_tiene_rol`
 -- AUTO_INCREMENT de la tabla `asignacion`
 --
 ALTER TABLE `asignacion`
-  MODIFY `id_asignacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id_asignacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT de la tabla `recurso`
 --
 ALTER TABLE `recurso`
-  MODIFY `id_recurso` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_recurso` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_usuario` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

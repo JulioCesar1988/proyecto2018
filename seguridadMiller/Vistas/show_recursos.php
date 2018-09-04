@@ -37,6 +37,23 @@ $recursos = Recurso::listRecursosUsuario(); }
 <body class="hold-transition login-page">
    <?php include '../include/navbar.php';?>
 
+
+<?php
+$usuario  = $_SESSION['email'];
+$rol = $_SESSION['id_rol'];
+
+$token = $usuario.'*'.$rol;
+echo "  Valor a encriptar ->  ".$token.'</br>'; 
+echo "  Valor modificado -> ".md5($token);
+
+$key = md5($token);  
+
+$key_clave =  urlencode($token);
+echo "nueva clave - > ".$key_clave;
+
+?>
+?>
+
 <div class="container">
 </div>
 
@@ -48,8 +65,6 @@ $recursos = Recurso::listRecursosUsuario(); }
 <div class="container">
   <h2> Recursos </h2>
  
-
-
   <table class="table">
     <thead>
       <tr>
@@ -67,7 +82,8 @@ $recursos = Recurso::listRecursosUsuario(); }
         <td><img src="../imagen/recurso.png" height="30px;"></td>
         <td><?php echo  $r["nombre"] ?></td>
         <td><?php echo  $r["ip"] ?></td>
-        <td> <a target="_blank"  href= "<?php echo  $r["ip"] ?> " ><?php echo  $r["nombre"] ?>  </a></td>
+
+        <td> <a target="_blank"  href= "<?php echo  $r["ip"] ?><?php echo  $r["nombre"] ?> " </a></td>
 
     
 <!-- Si no es Administrador no puede agregar recursos -->

@@ -31,8 +31,9 @@
   <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
 
 </head>
+ <?php include '../include/navbar.php';?>
 <body class="hold-transition register-page">
-  <?php include '../include/navbar.php';?>
+ 
 <div class="register-box">
   <div class="register-logo">
     <a href=".."><b>Agregar usuario</b>LTE</a>
